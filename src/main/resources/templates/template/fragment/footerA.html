@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="edge (param1, param2, param3)">헬로우
+    <div th:text="'번호: ' +  ${param1}"></div>
+    <div th:text="'이름: ' + ${param2}"></div>
+    <div th:text="'나이: ' + ${param3}"></div>
+</div>
+</body>
+</html>

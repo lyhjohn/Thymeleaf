@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template/layout/base :: common_header(~{::title},~{::link})">
+<!--  title과 link를 layoutMain에서 base로 보낸다음
+그렇게 만들어진 layout을 가져와서 layoutMain의 head에 replace해서 사용함-->
+  <title>메인 타이틀</title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/themes/smoothness/jquery-ui.css}">
+</head>
+<body>
+메인 컨텐츠
+</body>
+</html>

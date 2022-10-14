@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>text</title>
+</head>
+<body>
+<ul>
+
+</ul>
+<div th:each="member : ${members}">
+    <ul>
+        <li th:insert="~{template/fragment/footerA ::
+        edge (${memberStat.count}, ${member.name}, ${member.age})}"></li>
+    </ul>
+</div>
+
+<table border="1" th:each="member : ${members}">
+    <tr>
+        <th>번호</th>
+        <th>이름</th>
+        <th>나이</th>
+    </tr>
+    <tr>
+        <td th:text="${memberStat.count}"></td>
+        <td th:text="${member.name}"></td>
+        <td th:text="${member.age}"></td>
+    </tr>
+</table>
+
+
+</body>
+</html>

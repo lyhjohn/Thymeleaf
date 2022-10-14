@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 자바스크립트 인라인 사용 전 -->
+<script>
+    var username = "[[${user.username}]]";
+    var age = [[${user.age}]];
+    //자바스크립트 내추럴 템플릿
+    var username2 = /*[[${user.username}]]*/ "test username";
+    //객체
+    var user = [[${user}]];
+</script>
+<!-- 자바스크립트 인라인 사용 후  / js 안에서 타임리프 문법 사용할수 있게 해줌-->
+<script th:inline="javascript">
+    var username = [[${user.username}]];
+    var age = [[${user.age}]];
+    //자바스크립트 내추럴 템플릿
+    // 웹 동작하면 주석의 타임리프가 실행됨, html 파일 자체를 열면 그 외 값이 실행됨
+    var username2 = /*[[${user.username}]]*/ "test username";
+    //객체를 json으로 바꿔줌
+    var user = [[${user}]];
+</script>
+
+<!-- 자바스크립트 인라인 each -->
+<!--자바스크립트에서 타임리프 이용해 반복문 사용-->
+<script th:inline="javascript">
+    [# th:each="user, stat : ${users}"]
+    var user[[${stat.count}]] = [[${user}]];
+    [/]
+</script>
+</body>
+</html>

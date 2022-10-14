@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+
+</head>
+<body th:fragment="bodyFrag(p)">
+<div>fragmentB의 div</div>
+<p th:replace="${p}">이 문자가 보이면 안됨!</p>
+<div>하이하이</div>
+</body>
+</html>
